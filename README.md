@@ -3,6 +3,7 @@
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D18-brightgreen.svg)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![smithery badge](https://smithery.ai/badge/@PedroDnT/mcp-deepwebresearch)](https://smithery.ai/server/@PedroDnT/mcp-deepwebresearch)
 
 A Model Context Protocol (MCP) server for advanced web research.
 
@@ -48,6 +49,14 @@ Bring real-time info into Claude with intelligent search queuing, enhanced conte
 - [Claude Desktop app](https://claude.ai/download)
 
 ## Installation
+
+### Installing via Smithery
+
+To install Deep Web Research Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@PedroDnT/mcp-deepwebresearch):
+
+```bash
+npx -y @smithery/cli install @PedroDnT/mcp-deepwebresearch --client claude
+```
 
 ### Global Installation (Recommended)
 
