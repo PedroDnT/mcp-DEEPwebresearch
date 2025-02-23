@@ -1,0 +1,33 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required: []
+    properties:
+      maxParallelSearches:
+        type: number
+        default: 5
+        description: Maximum number of concurrent searches
+      searchDelayMs:
+        type: number
+        default: 200
+        description: Delay between searches in milliseconds
+      maxRetries:
+        type: number
+        default: 3
+        description: Number of retry attempts for failed requests
+      timeoutMs:
+        type: number
+        default: 55000
+        description: Request timeout in milliseconds
+      logLevel:
+        type: string
+        default: info
+        description: Logging level
+  commandFunction:
+    # A function that produces the CLI command to start the MCP on stdio.
+    |-
+    (config) => ({ command: 'node', args: ['dist/index.js'], env: { MAX_PARALLEL_SEARCHES: config.maxParallelSearches.toString(), SEARCH_DELAY_MS: config.searchDelayMs.toString(), MAX_RETRIES: config.maxRetries.toString(), TIMEOUT_MS: config.timeoutMs.toString(), LOG_LEVEL: config.logLevel } })
